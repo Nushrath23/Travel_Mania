@@ -1,0 +1,53 @@
+<div class="author">
+    <h1 class="author__heading">Hi , I'm Nushrath</h1>
+    <p class="author__body">
+        <ul><li>An avid explorer and passionate traveler with a deep love for discovering new 
+            destinations and immersing myself in diverse cultures.</li>
+            <li>With a heart full of wanderlust and a thirst for adventure, 
+                I've embarked on countless journeys across the globe, from bustling cities to remote villages, each experience leaving an 
+                indelible mark on my soul.</li>
+            </ul>
+       
+        </p>
+</div>
+<img src="/img/travel.jpg" alt="dev girl" class="aut_image" width="981" height="528" >
+
+<p class="author__body"> <ul>
+    <li>Whether trekking through lush rainforests, wandering ancient cobblestone streets, or simply savoring the flavors of local 
+    cuisine, I believe that travel is not just about the places you visit, but the moments you create and the connections you 
+    forge along the way.</li>
+    <li>Through my travels, I've learned to embrace the unknown, cherish every experience, and approach each destination with an 
+        open mind and a spirit of curiosity.</li>
+    <li>My goal is to inspire others to step out of their comfort zones, embrace the beauty 
+        of our world, and create their own unforgettable adventures.</li>
+    </ul> 
+    
+    Join me on this journey of discovery, as we explore the wonders of our planet together and make memories that will last a 
+    lifetime.
+    </p>
+
+
+<section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+    <ul class="article_ul">
+        <% data.forEach( post => { %>
+
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="article_list-Date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+         
+        <% }) %>
+        
+    </ul>
+
+    <% if (nextPage !== null) { %>
+        <a href="/?page=<% nextPage %>" class="pagination">&lt; View Older Posts</a>
+     
+    <% } %>
+
+
+    
+    </section>
